@@ -10,6 +10,7 @@ desc = "Default"
 snapshotFamily = 'Iosevka'
 snapshotFeature = {"NWID" = 0}
 export-glyph-names = true
+no-ligation = true
 
 [buildPlans.iosevka-term]
 family = "Iosevka Term"
@@ -33,6 +34,7 @@ serifs = "slab"
 snapshotFamily = 'Iosevka Slab'
 snapshotFeature = {"NWID" = 0}
 export-glyph-names = true
+no-ligation = true
 
 [buildPlans.iosevka-term-slab]
 family = "Iosevka Term Slab"
