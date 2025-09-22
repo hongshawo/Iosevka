@@ -35,8 +35,12 @@ jobs:
         mkdir -p $HOME/.local/bin && cp -nv ttfautohint $HOME/.local/bin
         chmod -v 755 $HOME/.local/bin/ttfautohint
     - run: npm install
-    - run: npm run build -- ttf::Iosevka
+    # - run: npm run build -- ttf::Iosevka
     # - run: npm run build -- ttf::IosevkaSlab
+    - run: npm run build -- ttf-unhinted::IosevkaN
+    - run: npm run build -- ttf-unhinted::IosevkaNStatic
+    - run: npm run build -- ttf-unhinted::IosevkaNTerm
+    - run: npm run build -- ttf-unhinted::IosevkaNFixed
     - name: Upload Artifacts
       uses: actions/upload-artifact@v4
       with:
