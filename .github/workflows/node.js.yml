@@ -41,6 +41,10 @@ jobs:
     - run: npm run build -- ttf-unhinted::IosevkaNStatic
     - run: npm run build -- ttf-unhinted::IosevkaNTerm
     - run: npm run build -- ttf-unhinted::IosevkaNFixed
+    - run: npm run build -- ttf-unhinted::IosevkaNSlab
+    - run: npm run build -- ttf-unhinted::IosevkaNStaticSlab
+    - run: npm run build -- ttf-unhinted::IosevkaNTermSlab
+    - run: npm run build -- ttf-unhinted::IosevkaNFixedSlab
     - name: Upload Artifacts
       uses: actions/upload-artifact@v4
       with:
