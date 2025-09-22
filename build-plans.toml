@@ -4,73 +4,73 @@ optimizeWithTtx = false
 
 # Building plans
 # Sans
-[buildPlans.Iosevka]
-family = "Iosevka"
+[buildPlans.IosevkaN]
+family = "Iosevka N"
 desc = "Default"
 buildCharMap = true
-snapshotFamily = 'Iosevka'
+snapshotFamily = 'Iosevka N'
 snapshotFeature = {"NWID" = 0}
 noCvSs = true
 exportGlyphNames = true
 
-[buildPlans.IosevkaStatic]
-family = "Iosevka Static"
+[buildPlans.IosevkaNStatic]
+family = "Iosevka N Static"
 buildCharMap = true
-snapshotFamily = 'Iosevka'
+snapshotFamily = 'Iosevka N'
 snapshotFeature = {"NWID" = 0}
 noCvSs = true
 noLigation =true
 
-[buildPlans.IosevkaTerm]
-family = "Iosevka Term"
+[buildPlans.IosevkaNTerm]
+family = "Iosevka N Term"
 spacing = "term"
-snapshotFamily = 'Iosevka'
+snapshotFamily = 'Iosevka N'
 snapshotFeature = {"NWID" = 1}
 noCvSs = true
 exportGlyphNames = true
 
-[buildPlans.IosevkaFixed]
-family = "Iosevka Fixed"
+[buildPlans.IosevkaNFixed]
+family = "Iosevka N Fixed"
 spacing = "fixed"
-snapshotFamily = 'Iosevka'
+snapshotFamily = 'Iosevka N'
 snapshotFeature = {"NWID" = 1}
 noCvSs = true
 noLigation = true
 
 # Slab
-[buildPlans.IosevkaSlab]
-family = "Iosevka Slab"
+[buildPlans.IosevkaNSlab]
+family = "Iosevka N Slab"
 desc = "Slab-serif"
 buildCharMap = true
 serifs = "slab"
-snapshotFamily = 'Iosevka Slab'
+snapshotFamily = 'Iosevka N Slab'
 snapshotFeature = {"NWID" = 0}
 noCvSs = true
 exportGlyphNames = true
 
-[buildPlans.IosevkaStaticSlab]
-family = "Iosevka Static Slab"
+[buildPlans.IosevkaNStaticSlab]
+family = "Iosevka N Static Slab"
 buildCharMap = true
 serifs = "slab"
-snapshotFamily = 'Iosevka Slab'
+snapshotFamily = 'Iosevka N Slab'
 snapshotFeature = {"NWID" = 0}
 noCvSs = true
 noLigation = true
 
-[buildPlans.IosevkaTermSlab]
-family = "Iosevka Term Slab"
+[buildPlans.IosevkaNTermSlab]
+family = "Iosevka N Term Slab"
 serifs = "slab"
 spacing = "term"
-snapshotFamily = 'Iosevka Slab'
+snapshotFamily = 'Iosevka N Slab'
 snapshotFeature = {"NWID" = 1}
 noCvSs = true
 exportGlyphNames = true
 
-[buildPlans.IosevkaFixedSlab]
-family = "Iosevka Fixed Slab"
+[buildPlans.IosevkaNFixedSlab]
+family = "Iosevka N Fixed Slab"
 serifs = "slab"
 spacing = "fixed"
-snapshotFamily = 'Iosevka Slab'
+snapshotFamily = 'Iosevka N Slab'
 snapshotFeature = {"NWID" = 1}
 noCvSs = true
 noLigation = true
