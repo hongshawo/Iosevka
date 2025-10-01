@@ -41,9 +41,9 @@ jobs:
         # npm run build -- ttf-unhinted::IosevkaNTermSlab
         # npm run build -- ttf-unhinted::IosevkaNFixedSlab
     - run: |
-        mkdir -p $HOME/IosevkaNStatic-TTF-Unhinted-x.x.x && \
+        mkdir -p ./IosevkaNStatic-TTF-Unhinted-x.x.x && \
         cp -nv dist/IosevkaNStatic/TTF-Unhinted/* IosevkaNStatic-TTF-Unhinted-x.x.x
-        mkdir -p $HOME/IosevkaNStaticSlab-TTF-Unhinted-x.x.x && \
+        mkdir -p ./IosevkaNStaticSlab-TTF-Unhinted-x.x.x && \
         cp -nv dist/IosevkaNStaticSlab/TTF-Unhinted/* IosevkaNStaticSlab-TTF-Unhinted-x.x.x
     - name: Upload Artifacts
       uses: actions/upload-artifact@v4
