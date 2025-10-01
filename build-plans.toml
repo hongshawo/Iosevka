@@ -1,0 +1,140 @@
+# Build options
+[buildOptions]
+optimizeWithTtx = false
+
+# Building plans
+# Sans
+[buildPlans.IosevkaN]
+family = "Iosevka N"
+desc = "Default"
+buildCharMap = true
+snapshotFamily = 'Iosevka N'
+snapshotFeature = {"NWID" = 0}
+noCvSs = true
+exportGlyphNames = true
+
+[buildPlans.IosevkaNStatic]
+family = "Iosevka N Static"
+buildCharMap = true
+snapshotFamily = 'Iosevka N'
+snapshotFeature = {"NWID" = 0}
+noCvSs = true
+noLigation =true
+
+[buildPlans.IosevkaNTerm]
+family = "Iosevka N Term"
+spacing = "term"
+snapshotFamily = 'Iosevka N'
+snapshotFeature = {"NWID" = 1}
+noCvSs = true
+exportGlyphNames = true
+
+[buildPlans.IosevkaNFixed]
+family = "Iosevka N Fixed"
+spacing = "fixed"
+snapshotFamily = 'Iosevka N'
+snapshotFeature = {"NWID" = 1}
+noCvSs = true
+noLigation = true
+
+# Slab
+[buildPlans.IosevkaNSlab]
+family = "Iosevka N Slab"
+desc = "Slab-serif"
+buildCharMap = true
+serifs = "slab"
+snapshotFamily = 'Iosevka N Slab'
+snapshotFeature = {"NWID" = 0}
+noCvSs = true
+exportGlyphNames = true
+
+[buildPlans.IosevkaNStaticSlab]
+family = "Iosevka N Static Slab"
+buildCharMap = true
+serifs = "slab"
+snapshotFamily = 'Iosevka N Slab'
+snapshotFeature = {"NWID" = 0}
+noCvSs = true
+noLigation = true
+
+[buildPlans.IosevkaNTermSlab]
+family = "Iosevka N Term Slab"
+serifs = "slab"
+spacing = "term"
+snapshotFamily = 'Iosevka N Slab'
+snapshotFeature = {"NWID" = 1}
+noCvSs = true
+exportGlyphNames = true
+
+[buildPlans.IosevkaNFixedSlab]
+family = "Iosevka N Fixed Slab"
+serifs = "slab"
+spacing = "fixed"
+snapshotFamily = 'Iosevka N Slab'
+snapshotFeature = {"NWID" = 1}
+noCvSs = true
+noLigation = true
+
+###################################################################################################
+# Weight mappings (style => shape weight, menu weight, CSS weight)
+#   Shape weight : affects the shape of the glyphs
+#   Menu weight  : affects the font menu name
+#   CSS weight   : affects the webfont CSS "font-weight" property
+# IMPORTANT : Currently "menu" property only support 100, 200, 300, 350, 400, 450, 500, 600, 700,
+#             800, 900, and "shape" properly only supports number between 100 and 900 (inclusive).
+
+[weights.ExtraLight]
+shape = 200
+menu  = 200
+css   = 200
+
+[weights.Light]
+shape = 300
+menu  = 300
+css   = 300
+
+[weights.Regular]
+shape = 400
+menu  = 400
+css   = 400
+
+[weights.SemiBold]
+shape = 600
+menu  = 600
+css   = 600
+
+[weights.Bold]
+shape = 700
+menu  = 700
+css   = 700
+
+# slope mappings (style => slope angle, shape slope grade, menu slope, CSS slope)
+[slopes.Upright]
+angle = 0
+shape = "upright"
+menu  = "upright"
+css   = "normal"
+
+[slopes.Italic]
+angle = 9.4
+shape = "italic"
+menu  = "italic"
+css   = "italic"
+
+# Width mappings (style => shape width, menu width, CSS stretch)
+#   Shape width   : affects the shape of the glyphs
+#   Menu width    : affects the font menu name
+#   CSS stretch   : affects the webfont CSS "font-stretch" property
+#
+# IMPORTANT : Currently "shape" property only support 3 ... 9
+#              and "menu" only support 1 ... 9
+
+[widths.Normal]
+shape = 500
+menu  = 5
+css   = "normal"
+
+[widths.Extended]
+shape = 600
+menu  = 7
+css   = "expanded"
