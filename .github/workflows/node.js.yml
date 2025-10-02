@@ -41,19 +41,19 @@ jobs:
         # npm run build -- ttf-unhinted::IosevkaNTermSlab
         # npm run build -- ttf-unhinted::IosevkaNFixedSlab
     - run: |
-        mkdir -p ./IosevkaNStatic-TTF-Unhinted-x.x.x && \
-        cp -nv dist/IosevkaNStatic/TTF-Unhinted/* IosevkaNStatic-TTF-Unhinted-x.x.x
-        mkdir -p ./IosevkaNStaticSlab-TTF-Unhinted-x.x.x && \
-        cp -nv dist/IosevkaNStaticSlab/TTF-Unhinted/* IosevkaNStaticSlab-TTF-Unhinted-x.x.x
+        mkdir -p ./IosevkaNStatic-x.x.x && \
+        cp -nv dist/IosevkaNStatic/TTF-Unhinted/* IosevkaNStatic-x.x.x
+        mkdir -p ./IosevkaNStaticSlab-x.x.x && \
+        cp -nv dist/IosevkaNStaticSlab/TTF-Unhinted/* IosevkaNStaticSlab-x.x.x
     - name: Upload Artifacts
       uses: actions/upload-artifact@v4
       with:
-        name: IosevkaNStatic-TTF-Unhinted-x.x.x
-        path: IosevkaNStatic-TTF-Unhinted-x.x.x
+        name: IosevkaNStatic-x.x.x
+        path: IosevkaNStatic-x.x.x
         if-no-files-found: warn
     - name: Upload Artifacts 2
       uses: actions/upload-artifact@v4
       with:
-        name: IosevkaNStaticSlab-TTF-Unhinted-x.x.x
-        path: IosevkaNStaticSlab-TTF-Unhinted-x.x.x
+        name: IosevkaNStaticSlab-x.x.x
+        path: IosevkaNStaticSlab-x.x.x
         if-no-files-found: warn
