@@ -1,0 +1,59 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+
+name: Node.js CI
+
+on: workflow_dispatch
+
+jobs:
+  build:
+
+    runs-on: ubuntu-22.04
+    timeout-minutes: 60
+
+    strategy:
+      matrix:
+        node-version: [20.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        submodules: 'recursive'
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    - run: |
+        mkdir -p $HOME/.local/bin && cp -nv ttfautohint.bin $HOME/.local/bin/ttfautohint
+        chmod -v 755 $HOME/.local/bin/ttfautohint
+    - run: npm install
+    - run: |
+        # npm run build -- ttf::Iosevka
+        # npm run build -- ttf::IosevkaSlab
+        # npm run build -- ttf-unhinted::IosevkaN
+        npm run build -- ttf-unhinted::IosevkaNStatic
+        # npm run build -- ttf-unhinted::IosevkaNTerm
+        # npm run build -- ttf-unhinted::IosevkaNFixed
+        # npm run build -- ttf-unhinted::IosevkaNSlab
+        npm run build -- ttf-unhinted::IosevkaNStaticSlab
+        # npm run build -- ttf-unhinted::IosevkaNTermSlab
+        # npm run build -- ttf-unhinted::IosevkaNFixedSlab
+    - run: |
+        mkdir -p ./IosevkaNStatic-x.x.x && \
+        cp -nv dist/IosevkaNStatic/TTF-Unhinted/* IosevkaNStatic-x.x.x
+        mkdir -p ./IosevkaNStaticSlab-x.x.x && \
+        cp -nv dist/IosevkaNStaticSlab/TTF-Unhinted/* IosevkaNStaticSlab-x.x.x
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: IosevkaNStatic-x.x.x
+        path: IosevkaNStatic-x.x.x
+        if-no-files-found: warn
+    - name: Upload Artifacts 2
+      uses: actions/upload-artifact@v4
+      with:
+        name: IosevkaNStaticSlab-x.x.x
+        path: IosevkaNStaticSlab-x.x.x
+        if-no-files-found: warn
