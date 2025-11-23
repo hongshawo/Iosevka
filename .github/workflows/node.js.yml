@@ -26,7 +26,8 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: |
-        mkdir -p $HOME/.local/bin && cp -nv ttfautohint.bin $HOME/.local/bin/ttfautohint
+        mkdir -p $HOME/.local/bin && \
+        cp -nv ttfautohint.bin $HOME/.local/bin/ttfautohint && \
         chmod -v 755 $HOME/.local/bin/ttfautohint
     - run: npm install
     - run: |
