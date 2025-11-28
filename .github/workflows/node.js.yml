@@ -19,12 +19,12 @@ jobs:
     steps:
     - uses: actions/checkout@v4
       with:
-        submodules: 'recursive'
+        submodules: recursive
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
-        cache: 'npm'
+        cache: npm
     - run: |
         # mkdir -p $HOME/.local/bin && \
         # cp -nv ttfautohint.bin $HOME/.local/bin/ttfautohint && \
