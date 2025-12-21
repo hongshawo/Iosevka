@@ -29,10 +29,11 @@ jobs:
         # mkdir -p $HOME/.local/bin && \
         # cp -nv ttfautohint.bin $HOME/.local/bin/ttfautohint && \
         # chmod -v 755 $HOME/.local/bin/ttfautohint
-        PATH="$GITHUB_WORKSPACE"/bin:"$PATH"
+        # PATH="$GITHUB_WORKSPACE"/bin:"$PATH"
         chmod -v 755 "$GITHUB_WORKSPACE"/bin/ttfautohint
     - run: npm install
     - run: |
+        PATH="$GITHUB_WORKSPACE"/bin:"$PATH"
         # npm run build -- ttf::Iosevka
         # npm run build -- ttf::IosevkaSlab
         # npm run build -- ttf-unhinted::IosevkaN
