@@ -20,7 +20,7 @@ jobs:
         submodules: recursive
     - uses: actions/setup-node@v4
       with:
-        node-version: "${{ env.NV }}"
+        node-version: ${{ env.NV }}
         cache: npm
     - run: |
         # mkdir -p $HOME/.local/bin && \
