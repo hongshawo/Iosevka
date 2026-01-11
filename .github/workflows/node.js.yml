@@ -11,8 +11,8 @@ env:
 jobs:
   build:
 
-    runs-on: ubuntu-22.04
-    timeout-minutes: ${{ env.TO }}
+    runs-on: ${{ env.RN }}
+    timeout-minutes: 60
 
     steps:
     - uses: actions/checkout@v4
