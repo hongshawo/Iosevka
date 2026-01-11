@@ -3,15 +3,13 @@ name: Node.js CI
 on: workflow_dispatch
 
 env:
-  RN: ubuntu-22.04
-  TO: 60
   NV: 20.x
   IV: 0.33.3.5.0
 
 jobs:
   build:
 
-    runs-on: ${{ env.RN }}
+    runs-on: ubuntu-22.04
     timeout-minutes: 60
 
     steps:
