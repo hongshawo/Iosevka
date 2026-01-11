@@ -53,6 +53,6 @@ jobs:
         if-no-files-found: warn
     - uses: actions/upload-artifact@v4
       with:
-        name: IosevkaNStaticSlab-${{ IV }}
-        path: IosevkaNStaticSlab-${{ IV }}
+        name: IosevkaNStaticSlab-${{ env.IV }}
+        path: IosevkaNStaticSlab-${{ env.IV }}
         if-no-files-found: warn
