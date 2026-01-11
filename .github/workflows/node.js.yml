@@ -2,11 +2,17 @@ name: Node.js CI
 
 on: workflow_dispatch
 
+env:
+  RN: ubuntu-22.04
+  TO: 60
+  NV: 20.x
+  IV: 0.33.3.5.0
+
 jobs:
   build:
 
-    runs-on: ubuntu-22.04
-    timeout-minutes: 60
+    runs-on: ${{ env.RN }}
+    timeout-minutes: ${{ env.TO }}
 
     steps:
     - uses: actions/checkout@v4
@@ -14,7 +20,7 @@ jobs:
         submodules: recursive
     - uses: actions/setup-node@v4
       with:
-        node-version: 20.x
+        node-version: ${{ env.NV }}
         cache: npm
     - run: |
         # mkdir -p $HOME/.local/bin && \
@@ -36,17 +42,17 @@ jobs:
         # npm run build -- ttf-unhinted::IosevkaNTermSlab
         # npm run build -- ttf-unhinted::IosevkaNFixedSlab
     - run: |
-        mkdir -p ./IosevkaNStatic-x.x.x.x.x && \
-        cp -nv dist/IosevkaNStatic/TTF-Unhinted/* IosevkaNStatic-x.x.x.x.x
-        mkdir -p ./IosevkaNStaticSlab-x.x.x.x.x && \
-        cp -nv dist/IosevkaNStaticSlab/TTF-Unhinted/* IosevkaNStaticSlab-x.x.x.x.x
+        mkdir -p "./IosevkaNStatic-$IV" && \
+        cp -nv dist/IosevkaNStatic/TTF-Unhinted/* "IosevkaNStatic-$IV"
+        mkdir -p "./IosevkaNStaticSlab-$IV" && \
+        cp -nv dist/IosevkaNStaticSlab/TTF-Unhinted/* "IosevkaNStaticSlab-$IV"
     - uses: actions/upload-artifact@v4
       with:
-        name: IosevkaNStatic-x.x.x.x.x
-        path: IosevkaNStatic-x.x.x.x.x
+        name: IosevkaNStatic-${{ IV }}
+        path: IosevkaNStatic-${{ IV }}
         if-no-files-found: warn
     - uses: actions/upload-artifact@v4
       with:
-        name: IosevkaNStaticSlab-x.x.x.x.x
-        path: IosevkaNStaticSlab-x.x.x.x.x
+        name: IosevkaNStaticSlab-${{ IV }}
+        path: IosevkaNStaticSlab-${{ IV }}
         if-no-files-found: warn
