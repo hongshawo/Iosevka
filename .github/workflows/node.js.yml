@@ -48,8 +48,8 @@ jobs:
         cp -nv dist/IosevkaNStaticSlab/TTF-Unhinted/* "IosevkaNStaticSlab-$IV"
     - uses: actions/upload-artifact@v4
       with:
-        name: IosevkaNStatic-${{ IV }}
-        path: IosevkaNStatic-${{ IV }}
+        name: IosevkaNStatic-${{ env.IV }}
+        path: IosevkaNStatic-${{ env.IV }}
         if-no-files-found: warn
     - uses: actions/upload-artifact@v4
       with:
