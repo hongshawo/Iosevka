@@ -3,8 +3,8 @@ name: Node.js CI
 on: workflow_dispatch
 
 env:
-  NV: 20.x
-  IV: 0.33.3.5.0
+  NV: 22.x
+  IV: 0.34.0.0.0
 
 jobs:
   build:
