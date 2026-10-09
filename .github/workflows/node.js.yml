@@ -13,10 +13,10 @@ jobs:
     timeout-minutes: 60
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v7
       with:
         submodules: recursive
-    - uses: actions/setup-node@v4
+    - uses: actions/setup-node@v7
       with:
         node-version: ${{ env.NV }}
         cache: npm
@@ -44,12 +44,12 @@ jobs:
         cp -nv dist/IosevkaNStatic/TTF-Unhinted/* "IosevkaNStatic-$IV"
         mkdir -p "./IosevkaNStaticSlab-$IV" && \
         cp -nv dist/IosevkaNStaticSlab/TTF-Unhinted/* "IosevkaNStaticSlab-$IV"
-    - uses: actions/upload-artifact@v4
+    - uses: actions/upload-artifact@v7
       with:
         name: IosevkaNStatic-${{ env.IV }}
         path: IosevkaNStatic-${{ env.IV }}
         if-no-files-found: warn
-    - uses: actions/upload-artifact@v4
+    - uses: actions/upload-artifact@v7
       with:
         name: IosevkaNStaticSlab-${{ env.IV }}
         path: IosevkaNStaticSlab-${{ env.IV }}
